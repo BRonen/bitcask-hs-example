@@ -1,1 +1,1 @@
-# paxos-hs
+# bitcask-hs-example

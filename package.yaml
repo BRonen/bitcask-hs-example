@@ -1,6 +1,6 @@
-name:                paxos-hs
+name:                bitcask-hs-example
 version:             0.1.0.0
-github:              "bronen/paxos-hs"
+github:              "bronen/bitcask-hs-example"
 license:             BSD-3-Clause
 author:              "Brenno Rodrigues"
 maintainer:          "brennopereira6@gmail.com"
@@ -16,10 +16,17 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/bronen/paxos-hs#readme>
+description:         Please see the README on GitHub at <https://github.com/bronen/bitcask-hs-example#readme>
 
 dependencies:
 - base >= 4.7 && < 5
+- bitcask-hs
+- curryer-rpc
+- stm
+- stm-containers
+- winery
+- bytestring
+- utf8-string
 
 ghc-options:
 - -Wall
@@ -36,7 +43,7 @@ library:
   source-dirs: src
 
 executables:
-  paxos-hs-exe:
+  bitcask-hs-example-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -44,10 +51,10 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - paxos-hs
+    - bitcask-hs-example
 
 tests:
-  paxos-hs-test:
+  bitcask-hs-example-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
@@ -55,4 +62,5 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - paxos-hs
+    - bitcask-hs-example
+    - optparse-generic

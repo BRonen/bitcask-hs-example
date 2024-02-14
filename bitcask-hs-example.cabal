@@ -4,11 +4,11 @@ cabal-version: 2.2
 --
 -- see: https://github.com/sol/hpack
 
-name:           paxos-hs
+name:           bitcask-hs-example
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/bronen/paxos-hs#readme>
-homepage:       https://github.com/bronen/paxos-hs#readme
-bug-reports:    https://github.com/bronen/paxos-hs/issues
+description:    Please see the README on GitHub at <https://github.com/bronen/bitcask-hs-example#readme>
+homepage:       https://github.com/bronen/bitcask-hs-example#readme
+bug-reports:    https://github.com/bronen/bitcask-hs-example/issues
 author:         Brenno Rodrigues
 maintainer:     brennopereira6@gmail.com
 copyright:      2024 Brenno Rodrigues
@@ -20,47 +20,69 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/bronen/paxos-hs
+  location: https://github.com/bronen/bitcask-hs-example
 
 library
   exposed-modules:
       Lib
   other-modules:
-      Paths_paxos_hs
+      Paths_bitcask_hs_example
   autogen-modules:
-      Paths_paxos_hs
+      Paths_bitcask_hs_example
   hs-source-dirs:
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , bitcask-hs
+    , bytestring
+    , curryer-rpc
+    , stm
+    , stm-containers
+    , utf8-string
+    , winery
   default-language: Haskell2010
 
-executable paxos-hs-exe
+executable bitcask-hs-example-exe
   main-is: Main.hs
   other-modules:
-      Paths_paxos_hs
+      Paths_bitcask_hs_example
   autogen-modules:
-      Paths_paxos_hs
+      Paths_bitcask_hs_example
   hs-source-dirs:
       app
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
-    , paxos-hs
+    , bitcask-hs
+    , bitcask-hs-example
+    , bytestring
+    , curryer-rpc
+    , stm
+    , stm-containers
+    , utf8-string
+    , winery
   default-language: Haskell2010
 
-test-suite paxos-hs-test
+test-suite bitcask-hs-example-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Paths_paxos_hs
+      Paths_bitcask_hs_example
   autogen-modules:
-      Paths_paxos_hs
+      Paths_bitcask_hs_example
   hs-source-dirs:
       test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
-    , paxos-hs
+    , bitcask-hs
+    , bitcask-hs-example
+    , bytestring
+    , curryer-rpc
+    , optparse-generic
+    , stm
+    , stm-containers
+    , utf8-string
+    , winery
   default-language: Haskell2010
